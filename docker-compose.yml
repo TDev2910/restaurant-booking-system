@@ -1,0 +1,52 @@
+services:
+    # ── 1. Laravel Application Container ──────────────────────
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: production # We use the same production dockerfile but with volumes for dev
+        container_name: xuandieuchef_dev_app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        # Cực kỳ quan trọng: Gắn mã nguồn từ máy bạn vào container
+        # Sửa code ở ngoài -> Bên trong Docker nhận ngay lập tức
+        volumes:
+            - .:/var/www/html
+            - ./storage:/var/www/html/storage
+        ports:
+            - "8000:80" # Truy cập web tại http://localhost:8000
+            - "5173:5173" # Port dành cho Vite (Hot Reload)
+        environment:
+            APP_ENV: local
+            APP_DEBUG: "true"
+            DB_HOST: db
+            DB_DATABASE: ${DB_DATABASE:-laravel}
+            DB_USERNAME: ${DB_USERNAME:-sail}
+            DB_PASSWORD: ${DB_PASSWORD:-password}
+        depends_on:
+            - db
+
+    # ── 2. Database Container (MySQL) ─────────────────────────
+    db:
+        image: 'mysql:8.4'
+        container_name: xuandieuchef_dev_db
+        restart: unless-stopped
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-password}'
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_DATABASE: '${DB_DATABASE:-laravel}'
+            MYSQL_USER: '${DB_USERNAME:-sail}'
+            MYSQL_PASSWORD: '${DB_PASSWORD:-password}'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        volumes:
+            - 'xuandieuchef_dev_db:/var/lib/mysql'
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD:-password}"]
+            retries: 3
+            timeout: 5s
+
+volumes:
+    xuandieuchef_dev_db:
+        driver: local
