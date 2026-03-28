@@ -13,6 +13,12 @@
     </div>
 </template>
 
+<style scoped>
+.main-content{
+    background: var(--neutral-color-700);
+}
+</style>
+
 <script setup>
 import { Link } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
