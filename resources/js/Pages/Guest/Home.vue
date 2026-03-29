@@ -1,3 +1,7 @@
 <template>
-    Trang chủ
+    <HeroBanner />
 </template>
+
+<script setup>
+import HeroBanner from '../Partials/HeroBanner.vue';
+</script>

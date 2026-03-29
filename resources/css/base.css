@@ -24,6 +24,12 @@
     --text-color: var(--neutral-color-100); /* social icon */
     --bg-light: hsl(0, 0%, 98%);
 
+    /* overlay */
+    --overlay-light: rgba(0, 0, 0, 0.3);  
+    --overlay-medium: rgba(0, 0, 0, 0.5);
+    --overlay-dark: rgba(0, 0, 0, 0.7);
+    --overlay-heavy: rgba(0, 0, 0, 0.9);
+
     /* font size, font weight, font family */
     --ff-primary: "Be Vietnam Pro", sans-serif;
 
@@ -38,7 +44,7 @@
     --fs-750: 1.625rem;
     --fs-800: 1.875rem;
     --fs-900: 2.5rem;
-    --fs-1000: 3.25rem;
+    --fs-1000: 4rem;
 
     --fw-regular: 400;
     --fw-semi-bold: 500;
@@ -46,7 +52,7 @@
     --fw-extreme-bold: 900;
 
     --fs-body: var(--fs-400);
-    --fs-primary-heading: var(--fs-800);
+    --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-700);
     --fs-nav: var(--fs-400);
     --fs-label: clamp(var(--fs-300), 3vw + 0.5rem, var(--fs-400));
@@ -67,8 +73,7 @@
 
 @media (min-width: 48em) {
     :root {
-        --fs-body: var(--fs-500);
-        --fs-primary-heading: var(--fs-900);
+        --fs-body: var(--fs-600);
         --fs-label: var(--fs-600);
         --fs-button: var(--fs-500);
         --fs-nav: var(--fs-300);
@@ -82,7 +87,7 @@
 }
 @media (min-width: 80em) {
     :root {
-        --fs-body: var(--fs-600);
+        --fs-body: var(--fs-700);
         --fs-primary-heading: var(--fs-1000);
         --fs-secondary-heading: var(--fs-800);
         --fs-label: var(--fs-750);
@@ -129,6 +134,10 @@ main {
 
 p:not([class]) {
     max-width: 30ch;
+}
+
+p[data-width="wide"] {
+    max-width: 46ch;
 }
 
 /* General styling */
@@ -185,7 +194,7 @@ p:not([class]) {
 
 .button:hover,
 .button:focus-visible {
-    background-color: var(--primary-color-200);
+    background-color: var(--primary-color-200)!important;
 }
 
 .button[data-type="inverted"]:hover,

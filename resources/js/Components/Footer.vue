@@ -142,6 +142,10 @@
     height: 72px;
 }
 
+.footer-desc p {
+    font-size: var(--fs-500);
+}
+
 /* footer nav */
 .footer-nav {
     grid-area: nav;
