@@ -32,7 +32,8 @@
                     <div class="sidebar-logo">
                         <img src="../../../public/img/logo.png" class="logo">
                     </div>
-                    <Button class="button" size="small" data-type="inverted" @click="closeCallback" icon="pi pi-times" rounded></Button>
+                    <Button class="button" size="small" data-type="inverted" @click="closeCallback" icon="pi pi-times"
+                        rounded></Button>
                 </div>
                 <div class="sidebar-nav | flex-1 | overflow-y-auto">
                     <ul class="nav-list | p-4 m-0 h-full">
@@ -60,16 +61,16 @@
 
 <style scoped>
 .header {
-    position: relative;
-}
-
-.header .nav-wrapper{
-    padding: var(--size-400) 0;
-    position: sticky;
+    background-color: var(--overlay-dark);
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.header .nav-wrapper {
+    padding: var(--size-400) 0;
 }
 
 .header-logo {
