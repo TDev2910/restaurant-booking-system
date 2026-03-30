@@ -1,13 +1,16 @@
 <?php
 
+use App\Http\Controllers\Guest\GuestController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Guest/Home');
-});    
+Route::get('/', [GuestController::class, 'home'])->name('home');
+Route::get('/thuc-don', [GuestController::class, 'menu'])->name('guest.menu');
+Route::get('/album', [GuestController::class, 'album'])->name('guest.album');
+Route::get('/tin-tuc', [GuestController::class, 'news'])->name('guest.news');
+Route::get('/lien-he', [GuestController::class, 'contact'])->name('guest.contact');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
