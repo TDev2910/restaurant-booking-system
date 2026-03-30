@@ -44,7 +44,7 @@ FROM php:8.2-fpm-alpine AS production
 LABEL org.opencontainers.image.title="XuanDieuChef API"
 LABEL org.opencontainers.image.description="Laravel 12 production image"
 
-# ── System dependencies ─────────────────────────────────────
+# ── System dependencies 
 # Group into one RUN to minimise layers; clean up cache in same step
 RUN apk add --no-cache \
     nginx \
@@ -73,20 +73,20 @@ RUN apk add --no-cache \
         opcache \
         intl
 
-# ── PHP configuration ────────────────────────────────────────
+# ── PHP configuration 
 COPY docker/php/php.ini /usr/local/etc/php/conf.d/app.ini
 COPY docker/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
-# ── Nginx configuration ──────────────────────────────────────
+# ── Nginx configuration 
 COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/nginx/default.conf /etc/nginx/http.d/default.conf
 
-# ── Supervisor configuration ─────────────────────────────────
+# ── Supervisor configuration 
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 WORKDIR /var/www/html
 
-# ── Application code ─────────────────────────────────────────
+# ── Application code 
 # Copy app code from the build context (no dev files thanks to .dockerignore)
 COPY --chown=www-data:www-data . .
 
@@ -96,17 +96,17 @@ COPY --chown=www-data:www-data --from=vendor /app/vendor ./vendor
 # Bring in compiled frontend assets from stage 2
 COPY --chown=www-data:www-data --from=frontend /app/public/build ./public/build
 
-# ── Permissions ───────────────────────────────────────────────
+# ── Permissions
 RUN mkdir -p storage/logs \
     storage/framework/{cache,sessions,views} \
     bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# ── Non-root user ─────────────────────────────────────────────
+# ── Non-root user 
 USER www-data
 
-# ── Runtime ───────────────────────────────────────────────────
+# ── Runtime 
 EXPOSE 80
 
 # Entrypoint: run Laravel bootstrap commands then start supervisor
