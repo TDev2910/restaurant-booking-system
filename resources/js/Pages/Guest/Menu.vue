@@ -19,9 +19,8 @@
                         </ul>
                     </div>
 
-                    <div class="sidebar-section mt-12">
+                    <!-- <div class="sidebar-section mt-12">
                         <h3 class="section-title">Lọc giá</h3>
-                        <!-- Slider Lọc giá sẽ code tại đây -->
                         <div class="price-filter-placeholder">
                             <Slider v-model="priceRange" range :min="0" :max="5000000" class="w-full" />
                             <div class="flex justify-between mt-4 text-sm opacity-70">
@@ -29,14 +28,7 @@
                                 <span>5.000.000đ</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="sidebar-section mt-12 chef-quote">
-                        <h3 class="section-title">Lời ngỏ từ Chef</h3>
-                        <p class="italic text-sm opacity-80 leading-relaxed">
-                            "Mỗi món ăn là một câu chuyện, là tâm huyết mà chúng tôi muốn gửi gắm đến thực khách..."
-                        </p>
-                    </div>
+                    </div> -->
                 </aside>
 
                 <!-- 3. Product List Right -->

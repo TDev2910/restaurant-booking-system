@@ -7,11 +7,24 @@
                 </div>
                 <div class="header-nav">
                     <ul class="nav-list" role="list">
-                        <li><Link href="/">Trang chủ</Link></li>
-                        <li><Link href="/thuc-don">Thực đơn</Link></li>
-                        <li><Link href="/album">Album</Link></li>
-                        <li><Link href="/tin-tuc">Tin tức</Link></li>
-                        <li><Link href="/lien-he">Liên hệ</Link></li>
+                        <li>
+                            <Link href="/">Trang chủ</Link>
+                        </li>
+                        <li>
+                            <Link href="/thuc-don">Thực đơn</Link>
+                        </li>
+                        <li>
+                            <Link href="/album">Album</Link>
+                        </li>
+                        <li>
+                            <Link href="/tin-tuc">Tin tức</Link>
+                        </li>
+                        <li>
+                            <Link href="/lien-he">Liên hệ</Link>
+                        </li>
+                        <li>
+                            <Link href="/gioi-thieu">Giới thiệu</Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -51,6 +64,9 @@
                         </li>
                         <li>
                             <Link href="/lien-he">Liên hệ</Link>
+                        </li>
+                        <li>
+                            <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
                     </ul>
                 </div>
