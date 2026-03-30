@@ -11,6 +11,7 @@ Route::get('/thuc-don', [GuestController::class, 'menu'])->name('guest.menu');
 Route::get('/album', [GuestController::class, 'album'])->name('guest.album');
 Route::get('/tin-tuc', [GuestController::class, 'news'])->name('guest.news');
 Route::get('/lien-he', [GuestController::class, 'contact'])->name('guest.contact');
+Route::get('/gioi-thieu', [GuestController::class, 'aboutus'])->name('guest.aboutus');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -22,4 +23,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

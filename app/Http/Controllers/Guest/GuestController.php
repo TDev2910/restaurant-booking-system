@@ -31,4 +31,9 @@ class GuestController extends Controller
     {
         return Inertia::render('Guest/Contact');
     }
+
+    public function aboutus()
+    {
+        return Inertia::render('Guest/Aboutus');
+    }
 }
