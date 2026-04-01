@@ -17,9 +17,19 @@ class GuestController extends Controller
         return Inertia::render('Guest/Menu');
     }
 
-    public function album()
+    public function albumFood()
     {
-        return Inertia::render('Guest/Album');
+        return Inertia::render('Guest/Album/FoodAlbum');
+    }
+
+    public function albumParty()
+    {
+        return Inertia::render('Guest/Album/PartyAlbum');
+    }
+
+    public function albumTent()
+    {
+        return Inertia::render('Guest/Album/TentAlbum');
     }
 
     public function contact()

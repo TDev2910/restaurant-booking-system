@@ -13,12 +13,24 @@
                         <li>
                             <Link href="/thuc-don">Thực đơn</Link>
                         </li>
-                        <li>
-                            <Link href="/album">Album</Link>
+                        <li class="has-dropdown">
+                            <Link href="/album">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></Link>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <Link :href="route('guest.album.monan')">ẢNH MÓN ĂN</Link>
+                                </li>
+                                <li>
+                                    <Link :href="route('guest.album.tiec')">ẢNH TIỆC</Link>
+                                </li>
+                                <li>
+                                    <Link :href="route('guest.album.rap')">ẢNH RẠP</Link>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
+
                         <li>
                             <Link href="/lien-he">Liên hệ</Link>
                         </li>
@@ -53,12 +65,24 @@
                         <li>
                             <Link href="/thuc-don">Thực đơn</Link>
                         </li>
-                        <li>
-                            <Link href="/album">Album</Link>
+                        <li class="has-dropdown">
+                            <Link href="/album">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></Link>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <Link :href="route('guest.album.monan')">ẢNH MÓN ĂN</Link>
+                                </li>
+                                <li>
+                                    <Link :href="route('guest.album.tiec')">ẢNH TIỆC</Link>
+                                </li>
+                                <li>
+                                    <Link :href="route('guest.album.rap')">ẢNH RẠP</Link>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
+
                         <li>
                             <Link href="/lien-he">Liên hệ</Link>
                         </li>
@@ -92,11 +116,60 @@
     text-transform: uppercase;
 }
 
+.has-dropdown {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    min-width: 200px;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-top: 2px solid var(--primary-color-600);
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0 !important;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px !important;
+    color: #ccc !important;
+    font-size: 13px !important;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.dropdown-menu a:hover {
+    background-color: #252525;
+    color: var(--primary-color-600) !important;
+    padding-left: 25px !important;
+}
+
 @media(max-width: 48em) {
     .header-nav {
         display: none;
     }
 }
+
 
 /* toggle mobile nav */
 .toggle-mobile-nav {
@@ -128,10 +201,28 @@
     gap: .5em;
 }
 
+.sidebar-nav .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    border-top: none;
+    padding: 0 0 0 20px;
+}
+
+.sidebar-nav .dropdown-menu a {
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
 .sidebar-menu li {
     padding: .75em 1em;
     cursor: pointer;
 }
+
 </style>
 
 <script setup>
