@@ -146,6 +146,7 @@ const featuredDishes = ref([
     { id: 12, name: 'Vịt Đúc Lò', image: '/img/sanpham/vitduclo.jpg' },
 ]);
 
+
 const filteredDishes = computed(() => {
     return dishes.value.filter(dish => dish.category === selectedCategory.value);
 });
