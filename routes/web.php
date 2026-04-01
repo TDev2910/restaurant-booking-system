@@ -8,7 +8,10 @@ use Inertia\Inertia;
 
 Route::get('/', [GuestController::class, 'home'])->name('home');
 Route::get('/thuc-don', [GuestController::class, 'menu'])->name('guest.menu');
-Route::get('/album', [GuestController::class, 'album'])->name('guest.album');
+Route::get('/album', [GuestController::class, 'albumFood'])->name('guest.album');
+Route::get('/album/mon-an', [GuestController::class, 'albumFood'])->name('guest.album.monan');
+Route::get('/album/tiec', [GuestController::class, 'albumParty'])->name('guest.album.tiec');
+Route::get('/album/rap', [GuestController::class, 'albumTent'])->name('guest.album.rap');
 Route::get('/lien-he', [GuestController::class, 'contact'])->name('guest.contact');
 Route::get('/gioi-thieu', [GuestController::class, 'aboutus'])->name('guest.aboutus');
 
