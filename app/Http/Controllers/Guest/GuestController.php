@@ -22,11 +22,6 @@ class GuestController extends Controller
         return Inertia::render('Guest/Album');
     }
 
-    public function news()
-    {
-        return Inertia::render('Guest/News');
-    }
-
     public function contact()
     {
         return Inertia::render('Guest/Contact');
