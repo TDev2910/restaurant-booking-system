@@ -17,13 +17,10 @@
                             <Link href="/album">Album</Link>
                         </li>
                         <li>
-                            <Link href="/tin-tuc">Tin tức</Link>
+                            <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
                         <li>
                             <Link href="/lien-he">Liên hệ</Link>
-                        </li>
-                        <li>
-                            <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
                     </ul>
                 </div>
@@ -60,13 +57,10 @@
                             <Link href="/album">Album</Link>
                         </li>
                         <li>
-                            <Link href="/tin-tuc">Tin tức</Link>
+                            <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
                         <li>
                             <Link href="/lien-he">Liên hệ</Link>
-                        </li>
-                        <li>
-                            <Link href="/gioi-thieu">Giới thiệu</Link>
                         </li>
                     </ul>
                 </div>

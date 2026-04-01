@@ -9,7 +9,6 @@ use Inertia\Inertia;
 Route::get('/', [GuestController::class, 'home'])->name('home');
 Route::get('/thuc-don', [GuestController::class, 'menu'])->name('guest.menu');
 Route::get('/album', [GuestController::class, 'album'])->name('guest.album');
-Route::get('/tin-tuc', [GuestController::class, 'news'])->name('guest.news');
 Route::get('/lien-he', [GuestController::class, 'contact'])->name('guest.contact');
 Route::get('/gioi-thieu', [GuestController::class, 'aboutus'])->name('guest.aboutus');
 
