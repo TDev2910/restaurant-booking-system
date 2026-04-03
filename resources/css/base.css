@@ -21,11 +21,12 @@
     --dark-color-600: hsl(214, 91%, 26%);
     --dark-color-400: hsl(214, 91%, 60%);
 
-    --text-color: var(--neutral-color-100); /* social icon */
+    --text-color: var(--neutral-color-100);
+    /* social icon */
     --bg-light: hsl(0, 0%, 98%);
 
     /* overlay */
-    --overlay-light: rgba(0, 0, 0, 0.3);  
+    --overlay-light: rgba(0, 0, 0, 0.3);
     --overlay-medium: rgba(0, 0, 0, 0.5);
     --overlay-dark: rgba(0, 0, 0, 0.7);
     --overlay-heavy: rgba(0, 0, 0, 0.9);
@@ -54,6 +55,7 @@
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-700);
+    --fs-normal-heading: var(--fs-500);
     --fs-nav: var(--fs-400);
     --fs-label: clamp(var(--fs-300), 3vw + 0.5rem, var(--fs-400));
     --fs-button: clamp(var(--fs-300), 3vw + 0.5rem, var(--fs-400));
@@ -74,22 +76,27 @@
 @media (min-width: 48em) {
     :root {
         --fs-body: var(--fs-600);
+        --fs-normal-heading: var(--fs-600);
         --fs-label: var(--fs-600);
         --fs-button: var(--fs-500);
         --fs-nav: var(--fs-300);
     }
 }
+
 @media (min-width: 64em) {
     :root {
+        --fs-normal-heading: var(--fs-700);
         --fs-label: var(--fs-700);
         --fs-button: var(--fs-600);
     }
 }
+
 @media (min-width: 80em) {
     :root {
         --fs-body: var(--fs-700);
         --fs-primary-heading: var(--fs-1000);
         --fs-secondary-heading: var(--fs-800);
+        --fs-normal-heading: var(--fs-750);
         --fs-label: var(--fs-750);
         --fs-nav: var(--fs-600);
         --fs-button: var(--fs-700);
@@ -157,6 +164,7 @@ p[data-width="wide"] {
     display: grid;
     gap: var(--size-600);
 }
+
 @media (min-width: 48em) {
     .even-columns {
         grid-auto-flow: column;
@@ -194,7 +202,7 @@ p[data-width="wide"] {
 
 .button:hover,
 .button:focus-visible {
-    background-color: var(--primary-color-200)!important;
+    background-color: var(--primary-color-200) !important;
 }
 
 .button[data-type="inverted"]:hover,
@@ -222,7 +230,7 @@ p[data-width="wide"] {
     transition: all 0.3s ease;
 }
 
-.nav-list li > * {
+.nav-list li>* {
     font-size: var(--fs-nav);
 }
 
@@ -242,12 +250,12 @@ p[data-width="wide"] {
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px; /* Độ dày của nét gạch */
+    height: 2px;
+    /* Độ dày của nét gạch */
     top: calc(100% + var(--size-200));
     left: 0;
-    background-color: var(
-        --primary-color-600
-    ); /* Màu của nét gạch (ví dụ: màu cam) */
+    background-color: var(--primary-color-600);
+    /* Màu của nét gạch (ví dụ: màu cam) */
 
     /* Thu nhỏ nét gạch về 0 và đặt tâm biến đổi ở bên phải */
     transform: scaleX(0);
@@ -269,7 +277,7 @@ p[data-width="wide"] {
         text-align: center;
     }
 
-    .text-center-only-md > * {
+    .text-center-only-md>* {
         margin-inline: auto;
     }
 }
@@ -277,12 +285,13 @@ p[data-width="wide"] {
 .text-safe {
     display: inline-block;
     width: 100%;
-    word-wrap: break-word; /* Hỗ trợ trình duyệt cũ */
+    word-wrap: break-word;
+    /* Hỗ trợ trình duyệt cũ */
     overflow-wrap: break-word;
 }
 
 /* flow spacing */
-.flow > :not(:first-child) {
+.flow> :not(:first-child) {
     margin-top: var(--flow-spacer, 2em);
 }
 
@@ -334,6 +343,19 @@ a[aria-label="instagram"] .social-icon {
     background-position: center center;
 }
 
+.text-truncate {
+    white-space: nowrap;
+    /* Ép chữ chạy thẳng, không được rớt dòng */
+    overflow: hidden;
+    /* Giấu phần chữ bị tràn ra khỏi khung */
+    text-overflow: ellipsis;
+    /* Tự động thêm dấu ... vào chỗ bị cắt */
+
+    /* Lưu ý quan trọng: Thẻ HTML áp dụng class này bắt buộc phải là block hoặc inline-block 
+     và bị giới hạn bởi một chiều rộng cụ thể (width) thì chữ mới bị ép cắt. */
+    display: block;
+}
+
 /* animation class */
 .text-blink {
     /* Gọi tên kịch bản, chạy trong 1 giây, tốc độ đều, lặp lại vô hạn */
@@ -345,11 +367,16 @@ a[aria-label="instagram"] .social-icon {
     background-color: var(--dark-color-600);
     padding: 10px 0;
 }
+
 .marquee .custom-container {
-    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-    margin: 0 auto; /* Căn giữa container ra giữa màn hình */
-    overflow: hidden; /* Cực kỳ quan trọng: Giấu chữ khi nó chạy ra khỏi giới hạn container */
-    white-space: nowrap; /* Ép chữ nằm trên 1 dòng */
+    max-width: 1200px;
+    /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto;
+    /* Căn giữa container ra giữa màn hình */
+    overflow: hidden;
+    /* Cực kỳ quan trọng: Giấu chữ khi nó chạy ra khỏi giới hạn container */
+    white-space: nowrap;
+    /* Ép chữ nằm trên 1 dòng */
 }
 
 /* Thẻ con: Kích hoạt hiệu ứng */
