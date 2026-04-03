@@ -1,5 +1,5 @@
 services:
-    # ── 1. Laravel Application Container ──────────────────────
+    # ── 1. Laravel Application Container 
     app:
         build:
             context: .
@@ -26,7 +26,7 @@ services:
         depends_on:
             - db
 
-    # ── 2. Database Container (MySQL) ─────────────────────────
+    # ── 2. Database Container (MySQL) 
     db:
         image: 'mysql:8.4'
         container_name: xuandieuchef_dev_db

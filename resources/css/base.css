@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+
+:root {
+    /* color */
+    --neutral-color-100: hsl(0, 0%, 100%);
+    --neutral-color-200: hsl(210, 14%, 97%);
+    --neutral-color-300: hsl(180, 1%, 87%);
+    --neutral-color-400: hsl(144, 3%, 64%);
+    --neutral-color-500: hsl(213, 12%, 46%);
+    --neutral-color-700: hsl(225, 23%, 17%);
+    --neutral-color-800: hsl(224, 24%, 15%);
+    --neutral-color-900: hsl(0, 0%, 12%);
+
+    --primary-color-600: hsl(46, 65%, 52%);
+    --primary-color-200: hsl(46, 63%, 73%);
+
+    --secondary-color-600: hsl(86, 45%, 48%);
+
+    --teriary-color-600: hsl(8, 82%, 45%);
+
+    --dark-color-600: hsl(214, 91%, 26%);
+    --dark-color-400: hsl(214, 91%, 60%);
+
+    --text-color: var(--neutral-color-100); /* social icon */
+    --bg-light: hsl(0, 0%, 98%);
+
+    /* overlay */
+    --overlay-light: rgba(0, 0, 0, 0.3);  
+    --overlay-medium: rgba(0, 0, 0, 0.5);
+    --overlay-dark: rgba(0, 0, 0, 0.7);
+    --overlay-heavy: rgba(0, 0, 0, 0.9);
+
+    /* font size, font weight, font family */
+    --ff-primary: "Be Vietnam Pro", sans-serif;
+
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fs-300: 0.8125rem;
+    --fs-400: 0.875rem;
+    --fs-500: 0.9375rem;
+    --fs-600: 1rem;
+    --fs-700: 1.25rem;
+    --fs-750: 1.625rem;
+    --fs-800: 1.875rem;
+    --fs-900: 2.5rem;
+    --fs-1000: 4rem;
+
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+    --fw-extreme-bold: 900;
+
+    --fs-body: var(--fs-400);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-700);
+    --fs-nav: var(--fs-400);
+    --fs-label: clamp(var(--fs-300), 3vw + 0.5rem, var(--fs-400));
+    --fs-button: clamp(var(--fs-300), 3vw + 0.5rem, var(--fs-400));
+
+    /* size */
+    --size-100: 0.25rem;
+    --size-200: 0.5rem;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.5rem;
+    --size-700: 2rem;
+    --size-800: 2.5rem;
+    --size-900: 3rem;
+    --size-1000: 5rem;
+}
+
+@media (min-width: 48em) {
+    :root {
+        --fs-body: var(--fs-600);
+        --fs-label: var(--fs-600);
+        --fs-button: var(--fs-500);
+        --fs-nav: var(--fs-300);
+    }
+}
+@media (min-width: 64em) {
+    :root {
+        --fs-label: var(--fs-700);
+        --fs-button: var(--fs-600);
+    }
+}
+@media (min-width: 80em) {
+    :root {
+        --fs-body: var(--fs-700);
+        --fs-primary-heading: var(--fs-1000);
+        --fs-secondary-heading: var(--fs-800);
+        --fs-label: var(--fs-750);
+        --fs-nav: var(--fs-600);
+        --fs-button: var(--fs-700);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for sticky navbar (100px) */
+[id] {
+    scroll-margin-top: 100px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    color: var(--text-color);
+    background-color: var(--neutral-color-900);
+    line-height: 1.6;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.layout {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+p:not([class]) {
+    max-width: 30ch;
+}
+
+p[data-width="wide"] {
+    max-width: 46ch;
+}
+
+/* General styling */
+.custom-container {
+    --max-width: 1200px;
+    --container-padding: 1rem;
+
+    width: min(var(--max-width), 100% - 2 * var(--container-padding));
+    margin-inline: auto;
+}
+
+.container {
+    margin-inline: auto;
+}
+
+.even-columns {
+    display: grid;
+    gap: var(--size-600);
+}
+@media (min-width: 48em) {
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
+
+/* logo img */
+.logo {
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 4/3;
+    flex-shrink: 0;
+}
+
+/* button */
+.button {
+    display: inline-flex;
+    border-radius: 100vmax;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+    line-height: 1;
+    font-size: var(--fs-button);
+    font-weight: var(--fw-bold);
+    background-color: var(--primary-color-600) !important;
+    color: var(--neutral-color-900) !important;
+    box-shadow: 0 1em 1em -1em var(--neutral-color-500);
+    border: 1px solid var(--primary-color-600) !important;
+}
+
+.button[data-type="inverted"] {
+    background-color: var(--neutral-color-700) !important;
+    color: var(--primary-color-600) !important;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: var(--primary-color-200)!important;
+}
+
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus-visible {
+    background-color: var(--primary-color-600);
+    color: var(--neutral-color-900);
+}
+
+/* nav wrapper */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* nav list */
+.nav-list {
+    font-weight: var(--fw-semi-bold);
+    display: flex;
+    gap: clamp(var(--size-200), 3.5vw, var(--size-800));
+}
+
+.nav-list li {
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-list li > * {
+    font-size: var(--fs-nav);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--neutral-color-200);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-list li a:hover,
+.nav-list li a:focus {
+    color: var(--primary-color-600);
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Độ dày của nét gạch */
+    top: calc(100% + var(--size-200));
+    left: 0;
+    background-color: var(
+        --primary-color-600
+    ); /* Màu của nét gạch (ví dụ: màu cam) */
+
+    /* Thu nhỏ nét gạch về 0 và đặt tâm biến đổi ở bên phải */
+    transform: scaleX(0);
+    transform-origin: center;
+
+    /* Tạo hiệu ứng chuyển động mượt mà trong 0.3s */
+    transition: transform 0.3s ease-out;
+}
+
+/* Khi hover, nét gạch sẽ phóng to lên 100% từ bên trái */
+.nav-list li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+/* Utility */
+@media (max-width: 62em) {
+    .text-center-only-md {
+        text-align: center;
+    }
+
+    .text-center-only-md > * {
+        margin-inline: auto;
+    }
+}
+
+.text-safe {
+    display: inline-block;
+    width: 100%;
+    word-wrap: break-word; /* Hỗ trợ trình duyệt cũ */
+    overflow-wrap: break-word;
+}
+
+/* flow spacing */
+.flow > :not(:first-child) {
+    margin-top: var(--flow-spacer, 2em);
+}
+
+/* social list */
+.social-list {
+    display: flex;
+    gap: var(--size-400);
+}
+
+.social-list a:is(:hover, :focus) .social-icon {
+    opacity: 0.7 !important;
+}
+
+.social-icon {
+    width: var(--size-700);
+    aspect-ratio: 1;
+    color: var(--neutral-color-100);
+    background-color: var(--neutral-color-100);
+    border-radius: var(--size-100);
+}
+
+a[aria-label="facebook"] .social-icon {
+    fill: #1877f2;
+}
+
+a[aria-label="youtube"] .social-icon {
+    fill: #ff0000;
+    border-radius: 60%;
+}
+
+a[aria-label="grab-food"] .social-icon {
+    fill: #00b14f;
+    background-color: transparent;
+}
+
+a[aria-label="instagram"] .social-icon {
+    fill: var(--neutral-color-100);
+    background-color: #e1306c;
+}
+
+/* contact list */
+.contact-list li {
+    gap: var(--size-300);
+}
+
+/* set background image */
+.set-bg-img {
+    background-repeat: no-repeat !important;
+    background-position: center center;
+}
+
+/* animation class */
+.text-blink {
+    /* Gọi tên kịch bản, chạy trong 1 giây, tốc độ đều, lặp lại vô hạn */
+    animation: blink-effect 1s linear infinite;
+}
+
+/* Thẻ cha: Giới hạn khung nhìn và cắt bỏ phần thừa */
+.marquee {
+    background-color: var(--dark-color-600);
+    padding: 10px 0;
+}
+.marquee .custom-container {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container ra giữa màn hình */
+    overflow: hidden; /* Cực kỳ quan trọng: Giấu chữ khi nó chạy ra khỏi giới hạn container */
+    white-space: nowrap; /* Ép chữ nằm trên 1 dòng */
+}
+
+/* Thẻ con: Kích hoạt hiệu ứng */
+.text-marquee {
+    display: inline-block;
+    color: white;
+    font-size: var(--fw-bold);
+    /* Chạy hiệu ứng trong 10 giây, tốc độ đều (linear), lặp vô hạn (infinite) */
+    animation: scroll-left 30s linear infinite;
+}
