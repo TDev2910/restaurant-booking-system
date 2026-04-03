@@ -41,11 +41,15 @@
                     @click="visibleSidebar = true"></Button>
 
                 <div class="header-button">
-                    <button class="button">Đặt lịch nhanh</button>
+                    <button class="button" @click="visibleBookingModal = true">Đặt lịch nhanh</button>
                 </div>
             </div>
         </div>
     </header>
+    
+    <!-- Quick Booking Modal -->
+    <QuickBookingModal v-model:visible="visibleBookingModal" />
+
     <!-- sidebar mobile nav -->
     <Drawer v-model:visible="visibleSidebar">
         <template #container="{ closeCallback }">
@@ -230,5 +234,8 @@ import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import Button from 'primevue/button';
 import Drawer from 'primevue/drawer';
+import QuickBookingModal from './QuickBookingModal.vue';
+
 const visibleSidebar = ref(false);
+const visibleBookingModal = ref(false);
 </script>

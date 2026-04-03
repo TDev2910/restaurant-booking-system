@@ -69,17 +69,20 @@
 
                 <div class="set-menu-grid">
                     <div v-for="menu in setMenus" :key="menu.id" class="set-menu-card">
-                        <h3 class="gold-text uppercase tracking-widest text-lg mb-6">Menu {{ menu.id < 10 ? '0' + menu.id : menu.id }}</h3>
-                        <ul class="set-menu-items my-6 text-sm space-y-4">
-                            <li v-for="(item, index) in menu.items" :key="index" class="menu-item-row flex items-baseline gap-2">
-                                <span class="item-name text-left leading-relaxed">{{ item }}</span>
-                                <span class="dots flex-1 border-b border-dotted border-gray-600 opacity-30"></span>
-                            </li>
-                        </ul>
-                        <div class="price-tag mt-10 p-4 border-t border-gray-800">
-                            <span class="text-[10px] uppercase opacity-50 block mb-1">Tổng cộng</span>
-                            <p class="gold-text text-xl font-bold italic">{{ menu.totalPrice }} VNĐ</p>
-                        </div>
+                        <h3 class="gold-text uppercase tracking-widest text-lg mb-6">Menu {{ menu.id < 10 ? '0' +
+                            menu.id : menu.id }}</h3>
+                                <ul class="set-menu-items my-6 text-sm space-y-4">
+                                    <li v-for="(item, index) in menu.items" :key="index"
+                                        class="menu-item-row flex items-baseline gap-2">
+                                        <span class="item-name text-left leading-relaxed">{{ item }}</span>
+                                        <span
+                                            class="dots flex-1 border-b border-dotted border-gray-600 opacity-30"></span>
+                                    </li>
+                                </ul>
+                                <div class="price-tag mt-10 p-4 border-t border-gray-800">
+                                    <span class="text-[10px] uppercase opacity-50 block mb-1">Tổng cộng</span>
+                                    <p class="gold-text text-xl font-bold italic">{{ menu.totalPrice }} VNĐ</p>
+                                </div>
                     </div>
                 </div>
 

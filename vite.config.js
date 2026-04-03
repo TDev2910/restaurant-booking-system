@@ -24,4 +24,9 @@ export default defineConfig({
             '@css': path.resolve(__dirname, 'resources/css'),
         },
     },
+    server: {
+        watch: {
+            usePolling: true,
+        },
+    },
 });

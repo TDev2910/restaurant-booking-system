@@ -129,6 +129,39 @@ const dishes = ref([
     { id: 17, category: 'GỎI', name: 'Gỏi cố hủ dừa tôm thịt', price: '155.000', description: 'Cốt hủ dừa bùi béo đặc sản miền Tây', image: '/img/sanpham/goicohudua.jpg' },
     { id: 18, category: 'GỎI', name: 'Gỏi gà hoa chuối', price: '120.000', description: 'Gà ta xé phay trộn hoa chuối đậm chất quê hương', image: '/img/sanpham/goigahoachuoi.jpg' },
     { id: 19, category: 'GỎI', name: 'Gỏi gà tiến vua', price: '135.000', description: 'Sự kết hợp giữa gà ta thả vườn và rau tiến vua', image: '/img/sanpham/goigatien vua.jpg' },
+
+    // CÁC MÓN TÔM
+    { id: 20, category: 'TÔM', name: 'Tôm kho tàu', price: '220.000', description: 'Tôm càng kho với gạch béo ngậy, đậm đà', image: '/img/sanpham/tomkhotau.jpg' },
+    { id: 21, category: 'TÔM', name: 'Tôm hoàng kim', price: '250.000', description: 'Tôm chiên giòn sốt trứng muối vàng óng', image: '/img/sanpham/tomhoangkim.jpg' },
+    { id: 22, category: 'TÔM', name: 'Tôm rang muối ớt', price: '210.000', description: 'Vị cay nồng của muối ớt hòa quyện tôm tươi', image: '/img/sanpham/tomrangmuoiot.jpg' },
+    { id: 23, category: 'TÔM', name: 'Tôm rang muối hồng kông', price: '235.000', description: 'Phong cách Hồng Kông với tỏi phi và muối đặc chế', image: '/img/sanpham/tomrangmuoihongkong.jpg' },
+    { id: 24, category: 'TÔM', name: 'Tôm hấp nước dừa - Hấp bia', price: '240.000', description: 'Tôm tươi hấp thanh ngọt tự nhiên', image: '/img/sanpham/tomhapnuocdua.jpg' },
+    { id: 25, category: 'TÔM', name: 'Tôm chiên giòn', price: '195.000', description: 'Lớp vỏ vàng rùm, thịt tôm bên trong ngọt thanh', image: '/img/sanpham/tomchiengion.jpg' },
+    { id: 26, category: 'TÔM', name: 'Tôm sốt thái', price: '225.000', description: 'Tôm tươi tái sốt Thái cay nồng, lôi cuốn', image: '/img/sanpham/tomsotthai.jpg' },
+    { id: 27, category: 'TÔM', name: 'Tôm cháy tỏi', price: '215.000', description: 'Hương thơm nồng nàn của tỏi phi giòn rụm', image: '/img/sanpham/tomchaytoi.jpg' },
+
+    // CÁC MÓN BÒ
+    { id: 28, category: 'BÒ', name: 'Bò kho', price: '185.000', description: 'Thịt bò hầm mềm cùng các loại thảo mộc', image: '/img/sanpham/bokho.jpg' },
+    { id: 29, category: 'BÒ', name: 'Bò lúc lắc', price: '245.000', description: 'Bò cắt khối vuông tái cháy cạnh, đậm vị', image: '/img/sanpham/boluclac.jpg' },
+    { id: 30, category: 'BÒ', name: 'Bò kéo pháo', price: '260.000', description: 'Món bò đặc sản với cách chế biến độc đáo', image: '/img/sanpham/bokeophao.jpg' },
+    { id: 31, category: 'BÒ', name: 'Bò nấu đốp', price: '230.000', description: 'Vị thanh nhẹ, bò hầm mềm tan trong miệng', image: '/img/sanpham/bonaudop.jpg' },
+    { id: 32, category: 'BÒ', name: 'Bò đùm hạt sen', price: '255.000', description: 'Bò bằm cuộn mỡ chày hầm cùng hạt sen bùi béo', image: '/img/sanpham/bodumhatsen.jpg' },
+    { id: 33, category: 'BÒ', name: 'Bò né hoa thiên lý', price: '210.000', description: 'Bò áp chảo nóng hổi thơm mùi hoa thiên lý', image: '/img/sanpham/bonehoathienly.jpg' },
+    { id: 34, category: 'BÒ', name: 'Bò nấu tiêu xanh', price: '235.000', description: 'Sốt tiêu xanh cay nhẹ, ấm nóng thơm lừng', image: '/img/sanpham/bonautieuxanh.jpg' },
+    { id: 35, category: 'BÒ', name: 'Bò hầm rượu vang', price: '320.000', description: 'Đậm đà hương vị vang đỏ và thảo mộc Pháp', image: '/img/sanpham/bohamruouvang.jpg' },
+    { id: 36, category: 'BÒ', name: 'Bò Úc sốt rượu vang', price: '380.000', description: 'Thăn bò Úc cao cấp quyện cùng nước sốt vang', image: '/img/sanpham/boucsotruouvang.jpg' },
+    { id: 37, category: 'BÒ', name: 'Bò cuộn trái cây', price: '240.000', description: 'Sự kết hợp lạ miệng giữa thịt bò và hoa quả', image: '/img/sanpham/bocuontraicay.jpg' },
+    { id: 38, category: 'BÒ', name: 'Bò nhúng giấm - Mẻ', price: '280.000', description: 'Nước dùng chua thanh, nhúng bò tái vừa tới', image: '/img/sanpham/bonhunggiamme.jpg' },
+
+    // CÁC MÓN GÀ
+    { id: 39, category: 'GÀ', name: 'Gà bó xôi', price: '350.000', description: 'Lớp xôi chiên giòn rụm bọc gà ta bên trong', image: '/img/sanpham/gaboxoi.jpg' },
+    { id: 40, category: 'GÀ', name: 'Gà nướng lá sen', price: '320.000', description: 'Hương thơm lá sen thấm đượm trong từng thớ thịt', image: '/img/sanpham/ganuonglasen.jpg' },
+    { id: 41, category: 'GÀ', name: 'Gà nướng muối ớt', price: '290.000', description: 'Gà ta thả vườn nướng muối ớt cay nồng', image: '/img/sanpham/ganuongmuoiot.jpg' },
+    { id: 42, category: 'GÀ', name: 'Gà nướng tây bắc', price: '310.000', description: 'Thơm mùi mắc khén, hạt dổi đặc trưng vùng cao', image: '/img/sanpham/ganuongtaybac.jpg' },
+    { id: 43, category: 'GÀ', name: 'Gà hấp mắm nhỉ', price: '300.000', description: 'Hương vị nước mắm truyền thống đậm đà', image: '/img/sanpham/gahapmamnhi.jpg' },
+    { id: 44, category: 'GÀ', name: 'Gà hấp cải bẹ xanh', price: '285.000', description: 'Thanh mát với vị nồng nhẹ của cải bẹ xanh', image: '/img/sanpham/gahapcaibexanh.jpg' },
+    { id: 45, category: 'GÀ', name: 'Gà thảo mộc cung đình', price: '360.000', description: 'Món ăn đại bổ với nhiều loại thảo dược quý', image: '/img/sanpham/gathaomoccungdinh.jpg' },
+    { id: 46, category: 'GÀ', name: 'Gà tiềm thuốc bắc', price: '340.000', description: 'Hầm kỹ cùng thuốc bắc, bồi bổ sức khỏe', image: '/img/sanpham/gatiemthuocbac.jpg' },
 ]);
 
 const featuredDishes = ref([
