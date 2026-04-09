@@ -57,6 +57,7 @@ RUN apk add --no-cache \
     oniguruma-dev \
     libzip-dev \
     icu-dev \
+    postgresql-dev \
     && mkdir -p /var/log/supervisor \
     && docker-php-ext-configure gd \
         --with-freetype \
@@ -64,6 +65,7 @@ RUN apk add --no-cache \
         --with-webp \
     && docker-php-ext-install -j$(nproc) \
         pdo_mysql \
+        pdo_pgsql \
         mbstring \
         zip \
         exif \
