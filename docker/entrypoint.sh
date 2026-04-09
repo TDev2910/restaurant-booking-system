@@ -29,5 +29,14 @@ echo "→ [6/6] Warming up caches..."
 php artisan config:cache
 php artisan route:cache
 
+echo "→ [7/7] Fixing file ownership and permissions..."
+# Sửa quyền cho tất cả file được tạo ra bởi root (trong quá trình install/migrate)
+# Sang quyền của user chạy website (www-data)
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+if [ -f /var/www/html/database/database.sqlite ]; then
+    chmod 664 /var/www/html/database/database.sqlite
+fi
+
 echo "→ Application ready. Starting services..."
 exec "$@"
