@@ -15,5 +15,5 @@
 
 <script setup>
 import { ref } from 'vue';
-const bannerImg = ref('/img/hero-banner.jpeg');
+const bannerImg = ref('/img/hero-banner.png');
 </script>

@@ -14,11 +14,8 @@
                             <Link href="/thuc-don">Thực đơn</Link>
                         </li>
                         <li class="has-dropdown">
-                            <Link href="/album">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></Link>
+                            <span class="nav-link-trigger">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></span>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <Link :href="route('guest.album.monan')">ẢNH MÓN ĂN</Link>
-                                </li>
                                 <li>
                                     <Link :href="route('guest.album.tiec')">ẢNH TIỆC</Link>
                                 </li>
@@ -46,7 +43,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Quick Booking Modal -->
     <QuickBookingModal v-model:visible="visibleBookingModal" />
 
@@ -70,11 +67,8 @@
                             <Link href="/thuc-don">Thực đơn</Link>
                         </li>
                         <li class="has-dropdown">
-                            <Link href="/album">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></Link>
+                            <span class="nav-link-trigger">Hình ảnh <i class="pi pi-chevron-down text-[10px] ml-1"></i></span>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <Link :href="route('guest.album.monan')">ẢNH MÓN ĂN</Link>
-                                </li>
                                 <li>
                                     <Link :href="route('guest.album.tiec')">ẢNH TIỆC</Link>
                                 </li>
@@ -122,7 +116,8 @@
 
 .has-dropdown {
     position: relative;
-    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .dropdown-menu {
@@ -146,6 +141,38 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+.nav-link-trigger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--neutral-color-200);
+    transition: color 0.3s ease;
+    position: relative;
+    font-weight: var(--fw-semi-bold);
+    text-transform: uppercase;
+}
+
+.nav-link-trigger:hover {
+    color: var(--primary-color-600);
+}
+
+.nav-link-trigger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: calc(100% + var(--size-200));
+    left: 0;
+    background-color: var(--primary-color-600);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link-trigger:hover::after {
+    transform: scaleX(1);
 }
 
 .dropdown-menu li {
@@ -226,7 +253,6 @@
     padding: .75em 1em;
     cursor: pointer;
 }
-
 </style>
 
 <script setup>

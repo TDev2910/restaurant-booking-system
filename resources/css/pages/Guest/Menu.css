@@ -27,6 +27,15 @@
     padding-left: var(--size-300);
 }
 
+.category-display-title {
+    font-size: var(--fs-700);
+    color: var(--primary-color-600);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: var(--ff-heading, serif);
+}
+
 .category-list li {
     padding: var(--size-300) 0;
     cursor: pointer;
